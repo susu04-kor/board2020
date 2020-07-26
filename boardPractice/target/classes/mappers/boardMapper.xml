@@ -37,4 +37,20 @@
 	   		FROM BOARD
 	   		WHERE BNO = #{bno}	
    </select>
+   
+   <!-- 게시글 수정 -->
+   <update id="update" parameterType="com.mvc.vo.BoardVO">
+		UPDATE	BOARD
+   		   SET	TITLE = #{title}, 
+   		   		CONTENT = #{content} 
+	   		WHERE BNO = #{bno}	
+   </update>
+   
+   <!-- 게시글 삭제 -->
+   <delete id="delete" parameterType="int">
+   		DELETE
+   			FROM BOARD
+   			WHERE BNO = #{bno}
+   </delete>
+   
 </mapper>
